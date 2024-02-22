@@ -7,4 +7,8 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+.search-bar{
+  border: none;
+  outline:none;
+  width: 200px;
+}
