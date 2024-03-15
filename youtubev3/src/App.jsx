@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Box } from '@mui/material'
 import './App.css'
-import {Navbar, Feed,VideoDetail, ChannelDetail,  SearchFeed,  } from './components';
+import {Navbar, Feed,VideoDetail, ChannelDetail,  SearchFeed } from './components';
 function App() {
 
   return (
