@@ -1,6 +1,8 @@
 import React from 'react'
 
-function Video() {
+function Videos({videos}) {
+
+
   return (
     <div>
       
@@ -8,4 +10,4 @@ function Video() {
   )
 }
 
-export default Video
+export default Videos
