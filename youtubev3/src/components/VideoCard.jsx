@@ -19,20 +19,20 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle } from "../utils/constants";
 
 const VideoCard = ({ video: { id: { videoId, playlistId }, snippet } }) => {
-  const vidPlay = () => {
-    return videoId?videoId:playlistId;
+  const vidOrPlay = () => {
+    return vidOrPlay?videoId:playlistId;
   }
   return (
 
 
     <Card sx={{ width: { xs: '100%', sm: '358px', md: "410px" }, m: .5, boxShadow: "none", borderRadius: 0 }}>
-      <Link to={videoId ? `/video/${videoId}` : `/video/cV2gBU6hKfY`} underline='none'>
+      <Link to={vidOrPlay ? `/video/${vidOrPlay}` : `/video/cV2gBU6hKfY`} underline='none'>
         <CardMedia image={snippet?.thumbnails?.high?.url || demoThumbnailUrl} alt={snippet?.title}
           sx={{ width: { xs: '100%', sm: '358px', md: "410px" }, height: 180 }}
         />
       </Link>
       <CardContent sx={{ textDecoration: 'none', backgroundColor: "#1E1E1E", height: '106px' }}>
-        <Link to={videoId ? `/video/${videoId}` : demoVideoUrl} underline='none' >
+        <Link to={vidOrPlay ? `/video/${vidOrPlay}` : demoVideoUrl} underline='none' >
           <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
             {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
           </Typography>
