@@ -8,6 +8,7 @@ import { Search } from '@mui/icons-material'
 const SearchBar = () => {
     return (
         <Paper
+        
             component="form"
             onSubmit={() => { }}
             sx={{
@@ -15,7 +16,7 @@ const SearchBar = () => {
                 border: '2px solid red',
                 pl:2,
                 boxShadow: 'none',
-                mr: { sm: 5 }
+                mr: { sm: 2 ,xs:0 }
             }}
         >
             <input className='search-bar' placeholder='search...' value='' onChange={() => { }} />

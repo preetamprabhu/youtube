@@ -18,10 +18,10 @@ const axiosInstance = axios.create({
 export const FetchFromAPI = async (url) => {
     try {
 
-        const res = await axiosInstance.get(`${url}`);
-        return res.data;
+        const result = await axiosInstance.get(`${url}`);
+        return result.data;
     
     } catch (error) {
-        console.log(error);
+        console.log(error.message);
     }
 }

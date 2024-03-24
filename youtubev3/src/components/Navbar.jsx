@@ -7,8 +7,15 @@ function Navbar() {
   return (
     <Stack direction="row"
       alignItems="center"
+      justifyContent= 'space-between'
       p={2}
-      sx={{ position: 'sticky', background: 'black', top: 0, justifyContent: 'space-between' }}>
+      sx={{
+        position: 'sticky',
+        background: 'black',
+        top: 0,
+        left: 0,
+        }}
+    >
 
       <Link to="/" style={{ display: 'flex', alignItems: 'Center' }}>
         <img src={logo} alt="logo" height={45} />

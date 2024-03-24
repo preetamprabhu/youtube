@@ -1,43 +1,47 @@
-import React, { useEffect ,useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 import SideBar from './SideBar'
 import Videos from './Videos'
-import {FetchFromAPI} from '../utils/FetchFromAPI'
+import { FetchFromAPI } from '../utils/FetchFromAPI'
 
 
 
 
 function Feed() {
 
+  //useState
   const [selectedCategory, setSelectedCategory] = useState('New')
-  const [videos, setVideos] = useState(null)
+  const [videos, setVideos] = useState()
 
+  // useEffect
   useEffect(() => {
-    setVideos(null)
-
     FetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-    .then((data)=>{setVideos(data.items)
-    console.log(data.items)})
-  
+      .then((data) => {
+        setVideos(data.items)
+        console.log(data.items)
+      })
   }, [selectedCategory])
-
 
   return (
     <>
       <Stack
-        sx={{ flexDirection: { sx: 'column', sm: 'row' } }}>
+        sx={{ position: 'relative', top: '0', left: '0', flexDirection: { sx: 'column', sm: 'row' } }}>
         <Box sx={{
           height: { sx: 'auto', md: '92vh' },
           borderRight: '1px solid #3d3d3d',
-          px: { xs: 0, md: 2 }}}
-          >
-          <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+          px: { xs: 0, md: 2 },
+          position: 'sticky',
+          top: '12vh',
+          left: '0',
+        }}
+        >
+          <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
 
           <Typography
             className='copyright'
             variant='body2'
             sx={{ mt: 1.5, color: '#fff' }}
-            >
+          >
             @ copyright 2024 JSM Media
           </Typography>
         </Box>
@@ -45,10 +49,10 @@ function Feed() {
           p={2}
           sx={{
             overflowY: 'auto',
-            height: {xs:'100%'},
+            height: { xs: '100%' },
             flex: 2
           }}
-          >
+        >
           <Typography
             fontWeight='bold'
             variant='h4'
@@ -61,11 +65,11 @@ function Feed() {
               videos
             </span>
           </Typography>
-          <Videos videos={videos}/>
+          <Videos videos={videos} zindex='-1' />
 
-         
+
         </Box>
-        
+
       </Stack>
     </>
   )
