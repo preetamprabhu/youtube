@@ -8,9 +8,9 @@ function App() {
   return (
     <BrowserRouter>
       <Box sx={{ backgroundColor: "black "}}>
-        <Navbar/>
+        <Navbar />
         <Routes>
-          <Route path='/' element={<Feed/>} />
+          <Route path='/' element={<Feed />} />
           <Route path='/video/:id' element={<VideoDetail/>} />
           <Route path='/contact/:id' element={<ChannelDetail/>} />
           <Route path='/search/:searchTerm' element={<SearchFeed/>} />

@@ -9,16 +9,17 @@ const Videos = ({ videos, direction }) => {
 
   return (
     <Stack
-      direction={direction || "row"}
       flexWrap="wrap"
-      // justifyContent="space-between" 
-      // alignItems="center" 
+      direction="row"
+      justifyContent="start"
+      alignItems="center" 
       gap={2}
-      sx={{
-        display: 'grid',
-        gap: 1,
-        gridTemplateColumns: 'repeat(3, 1fr)',
-      }}
+      // sx={{
+      //   width:{ xs: '100%', sm: '358px', md: "410px" },
+      //   display: 'grid',
+      //   gap: 1,
+      //   gridTemplateColumns: 'repeat(3, 1fr)',
+      // }}
     >
       {videos.map((item, idx) => (
         <Box key={idx}>

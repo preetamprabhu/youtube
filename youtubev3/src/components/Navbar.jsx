@@ -14,6 +14,7 @@ function Navbar() {
         background: 'black',
         top: 0,
         left: 0,
+        zIndex:1000
         }}
     >
 

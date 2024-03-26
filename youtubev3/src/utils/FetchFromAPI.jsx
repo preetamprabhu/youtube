@@ -52,5 +52,6 @@ export const FetchFromAPI = async (url) => {
         return response.data;
     } catch (error) {
         console.error(error);
+        throw error;
     }
 };

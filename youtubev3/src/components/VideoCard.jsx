@@ -25,10 +25,10 @@ const VideoCard = ({ video: { id: { videoId, playlistId }, snippet } }) => {
   return (
 
 
-    <Card sx={{ width: { xs: '100%', sm: '358px', md: "410px" }, m: .5, boxShadow: "none", borderRadius: 0 }}>
+    <Card sx={{ width: { xs: '100%', sm: '250px', md: "375px",lg:'400px' }, m: '2px', boxShadow: "none", borderRadius: 0 }}>
       <Link to={vidOrPlay ? `/video/${vidOrPlay}` : `/video/cV2gBU6hKfY`} underline='none'>
         <CardMedia image={snippet?.thumbnails?.high?.url || demoThumbnailUrl} alt={snippet?.title}
-          sx={{ width: { xs: '100%', sm: '358px', md: "410px" }, height: 180 }}
+          sx={{ width: { xs: '100%', sm: '250px', md: "375px",lg:'400px' }, height: 180 }}
         />
       </Link>
       <CardContent sx={{ textDecoration: 'none', backgroundColor: "#1E1E1E", height: '106px' }}>

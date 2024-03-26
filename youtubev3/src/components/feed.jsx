@@ -25,11 +25,11 @@ function Feed() {
   return (
     <>
       <Stack
-        sx={{ position: 'relative', top: '0', left: '0', flexDirection: { sx: 'column', sm: 'row' } }}>
+        sx={{ position: 'relative', top: '0', left: '0', flexDirection: { xs: 'column', sm: 'row' }, zIndex: 10 }}>
         <Box sx={{
-          height: { sx: 'auto', md: '92vh' },
+          height:'92vh' ,
           borderRight: '1px solid #3d3d3d',
-          px: { xs: 0, md: 2 },
+          px: { xs: 0, md: 0 },
           position: 'sticky',
           top: '12vh',
           left: '0',
@@ -46,11 +46,12 @@ function Feed() {
           </Typography>
         </Box>
         <Box
-          p={2}
+          className='feed-videos'
+          p="13px"
           sx={{
             overflowY: 'auto',
             height: { xs: '100%' },
-            flex: 2
+            flex: 1
           }}
         >
           <Typography
@@ -65,7 +66,7 @@ function Feed() {
               videos
             </span>
           </Typography>
-          <Videos videos={videos} zindex='-1' />
+          <Videos videos={videos} />
 
 
         </Box>
