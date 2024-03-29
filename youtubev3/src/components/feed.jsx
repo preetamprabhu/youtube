@@ -25,15 +25,23 @@ function Feed() {
   return (
     <>
       <Stack
-        sx={{ position: 'relative', top: '0', left: '0', flexDirection: { xs: 'column', sm: 'row' }, zIndex: 10 }}>
-        <Box sx={{
-          height:'92vh' ,
-          borderRight: '1px solid #3d3d3d',
-          px: { xs: 0, md: 0 },
-          position: 'sticky',
-          top: '12vh',
+        sx={{
+          position: 'relative',
+          top: '0',
           left: '0',
-        }}
+          flexDirection: { xs: 'column', sm: 'row' },
+          zIndex: 10 }}
+        >
+        <Box
+          className='feed'
+          sx={{
+            height: {xs:'0vh', md:'92vh'},
+            borderRight: '1px solid #3d3d3d',
+            px: { xs: 0, md: 0 },
+            position: 'sticky',
+            top: '12vh',
+            left: '0',
+          }}
         >
           <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
 
@@ -46,7 +54,7 @@ function Feed() {
           </Typography>
         </Box>
         <Box
-          className='feed-videos'
+          // className='feed-videos'
           p="13px"
           sx={{
             overflowY: 'auto',

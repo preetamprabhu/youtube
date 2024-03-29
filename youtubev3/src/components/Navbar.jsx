@@ -8,13 +8,14 @@ function Navbar() {
     <Stack direction="row"
       alignItems="center"
       justifyContent= 'space-between'
-      p={2}
+      
       sx={{
         position: 'sticky',
         background: 'black',
         top: 0,
         left: 0,
-        zIndex:1000
+        zIndex:1000,
+        p:{xs:'5px 4px 0 4px ',sm:'16px',md:'16px'}
         }}
     >
 

@@ -51,10 +51,8 @@ body {
     display: none;
   }
 }
-/* @media screen and (max-device-width:425px), screen and (max-width:640px) {
-  .sidebar{
-    position: fixed;
-    top: 0vh;
-    left: 0;
+@media screen and (max-width:430px) {
+    .feed{
+      height: 0vh;
   }
-} */
+}
