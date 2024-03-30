@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 import SideBar from './SideBar'
 import Videos from './Videos'
-import { FetchFromAPI } from '../utils/FetchFromAPI'
+import FetchFromAPI  from '../utils/FetchFromAPI'
 
 
 

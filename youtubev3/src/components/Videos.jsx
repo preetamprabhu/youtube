@@ -11,7 +11,8 @@ const Videos = ({ videos, direction }) => {
     <Stack
       flexWrap="wrap"
       direction="row"
-      justifyContent="start"
+      // justifyContent="start"
+      justifyItems='stretch'
       alignItems="center" 
       gap={2}
       // sx={{

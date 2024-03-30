@@ -46,12 +46,13 @@ const axiosInstance = axios.create({
     }
 });
 
-export const FetchFromAPI = async (url) => {
+const FetchFromAPI = async (url) => {
     try {
         const response = await axiosInstance.get(url);
         return response.data;
     } catch (error) {
         console.error(error);
-        throw error;
+        // throw error;
     }
 };
+export default FetchFromAPI
