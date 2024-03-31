@@ -47,51 +47,48 @@ function VideoDetail() {
 
   return (
 
-    (loading && <Box minHeight="95vh" >
-      <Stack direction={{ xs: "column", md: "row" }}  >
-        <Box >
-          <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
-            <Box
-              sx={{
-                width: { xs: '100%', sm: '650px', md: '990px' },
-                height: { xs: '300px', sm: '400px', md: '500px' }
-              }}>
-              <iframe
-                width="100%"
-                height='100%'
-                src={`https://www.youtube.com/embed/${id}`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </Box>
-            <Typography color='white' variant="h5" fontWeight="bold" p={2}>
-              {videoDetail.snippet.title}
-            </Typography>
-            <Stack direction="row" justifyContent="space-between" py={1} px={2} sx={{ color: 'white' }}>
-              <Link to={`/channel/${videoDetail.snippet.channelId}`}>
-                <Typography variant={{ sm: "subtitle1", md: 'h6' }} color="white">
-                  {videoDetail.snippet.channelTitle}
-                  <CheckCircleIcon sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
-                </Typography>
-              </Link>
-              <Stack direction="row" gap="20px" alignItems="center">
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {parseInt(videoDetail.statistics.viewCount).toLocaleString()} views
-                </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {parseInt(videoDetail.statistics.likeCount).toLocaleString()} likes
-                </Typography>
-              </Stack>
-            </Stack>
+    (loading &&
+      <Box position='relative' direction={{ xs: 'column', sm: 'column', md: 'row' }} display='flex' margin='auto' width='fit-content'>
+        <Box sx={{ width: "auto", position: "sticky", top: "86px" }}>
+          <Box sx={{width:{xs:'100%',md:'900px'},height:{xs:'200px',md:'600px'}}} >
+            <iframe
+              width="100%"
+              height='100%'
+              src={`https://www.youtube.com/embed/${id}`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </Box>
+          <Typography color='white' variant="h5" fontWeight="bold" p={2}>
+            {videoDetail.snippet.title}
+          </Typography>
+          <Stack direction="row" justifyContent="space-between" py={1} px={2} sx={{ color: 'white' }}>
+            <Link to={`/channel/${videoDetail.snippet.channelId}`}>
+              <Typography variant={{ sm: "subtitle1", md: 'h6' }} color="white">
+                {videoDetail.snippet.channelTitle}
+                <CheckCircleIcon sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
+              </Typography>
+            </Link>
+            <Stack direction="row" gap="20px" alignItems="center">
+              <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                {parseInt(videoDetail.statistics.viewCount).toLocaleString()} views
+              </Typography>
+              <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                {parseInt(videoDetail.statistics.likeCount).toLocaleString()} likes
+              </Typography>
+            </Stack>
+          </Stack>
         </Box>
-        <Box px={{xs:0.5,md:2}} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center">
+        <Box 
+        // maxHeight='80vh' 
+        // overflow='auto' 
+        px={2} py={{ md: 1, xs: 5 }} justifyContent="center" alignItems="center">
           <Videos videos={videos} direction="column" />
         </Box>
-      </Stack >
-    </Box >)
+      </Box>
+    )
   )
 
 }
@@ -100,3 +97,45 @@ export default VideoDetail;
 
 
 
+{/* <Stack direction={{ xs: "column", md: "row" }} margin='auto' width='fit-content' sx={{width:'auto'}}>
+
+<Box sx={{ width: "auto", position: "sticky", top: "86px" }}>
+  <Box
+    sx={{
+      width: { xs: '100%', sm: '650px', md: '1000px' },
+      height: { xs: '300px', sm: '400px', md: '500px' }
+    }}>
+    <iframe
+      width="100%"
+      height='100%'
+      src={`https://www.youtube.com/embed/${id}`}
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  </Box>
+  <Typography color='white' variant="h5" fontWeight="bold" p={2}>
+    {videoDetail.snippet.title}
+  </Typography>
+  <Stack direction="row" justifyContent="space-between" py={1} px={2} sx={{ color: 'white' }}>
+    <Link to={`/channel/${videoDetail.snippet.channelId}`}>
+      <Typography variant={{ sm: "subtitle1", md: 'h6' }} color="white">
+        {videoDetail.snippet.channelTitle}
+        <CheckCircleIcon sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
+      </Typography>
+    </Link>
+    <Stack direction="row" gap="20px" alignItems="center">
+      <Typography variant="body1" sx={{ opacity: 0.7 }}>
+        {parseInt(videoDetail.statistics.viewCount).toLocaleString()} views
+      </Typography>
+      <Typography variant="body1" sx={{ opacity: 0.7 }}>
+        {parseInt(videoDetail.statistics.likeCount).toLocaleString()} likes
+      </Typography>
+    </Stack>
+  </Stack>
+</Box>
+
+
+</Box>
+</Stack > */}
