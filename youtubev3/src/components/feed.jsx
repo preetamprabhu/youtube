@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 import SideBar from './SideBar'
 import Videos from './Videos'
-import FetchFromAPI  from '../utils/FetchFromAPI'
+import FetchFromAPI from '../utils/FetchFromAPI'
 
 
 
@@ -11,15 +11,30 @@ function Feed() {
 
   //useState
   const [selectedCategory, setSelectedCategory] = useState('New')
-  const [videos, setVideos] = useState()
+  const [videos, setVideos] = useState(null)
 
   // useEffect
   useEffect(() => {
     FetchFromAPI(`search?part=snippet&q=${selectedCategory}`)
-      .then((data) => {
-        setVideos(data.items)
-        console.log(data.items)
-      })
+    //   .then((data) => {
+    //     setVideos(data.items)
+    //     console.log(data.items)
+    //   })
+
+    .then((data) => {
+    if (data && data.items) {
+      setVideos(data.items);
+      console.log(data.items);
+    } else {
+      console.error("Invalid response format:", data);
+    }
+  })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+
+
+
   }, [selectedCategory])
 
   return (
@@ -30,12 +45,13 @@ function Feed() {
           top: '0',
           left: '0',
           flexDirection: { xs: 'column', sm: 'row' },
-          zIndex: 10 }}
-        >
+          zIndex: 10
+        }}
+      >
         <Box
           className='feed'
           sx={{
-            height: {xs:'0vh', md:'92vh'},
+            height: { xs: '0vh', md: '92vh' },
             borderRight: '1px solid #3d3d3d',
             px: { xs: 0, md: 0 },
             position: 'sticky',
@@ -44,7 +60,6 @@ function Feed() {
           }}
         >
           <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-
           <Typography
             className='copyright'
             variant='body2'
@@ -75,10 +90,7 @@ function Feed() {
             </span>
           </Typography>
           <Videos videos={videos} />
-
-
         </Box>
-
       </Stack>
     </>
   )
