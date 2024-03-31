@@ -53,7 +53,7 @@ function VideoDetail() {
           <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
             <Box
               sx={{
-                width: { xs: '100%', sm: '650px', md: '600px' },
+                width: { xs: '100%', sm: '650px', md: '990px' },
                 height: { xs: '300px', sm: '400px', md: '500px' }
               }}>
               <iframe
