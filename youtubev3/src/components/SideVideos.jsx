@@ -1,22 +1,16 @@
-import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
+import Grid from '@mui/material/Grid'
 import VideoCard from "./VideoCard.jsx";
 import ChannelCard from "./ChannelCard.jsx";
 import Loader from "./Loader";
 
-const Videos = ({ videos, direction }) => {
+const SideVideos = ({ videos, direction }) => {
   if (!videos?.length) return <Loader />;
 
   return (
-    <Grid container
-      // direction={direction || "row"}
-      // flexWrap="wrap"
-      // flexDirection='column'
-      // alignItems="center"
-      rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-      >
+    <Grid container rowSpacing={2} >
       {videos.map((item, idx) => (
-        <Grid item xs={12} sm={6} md={4} lg={3} key={idx}>
+        <Grid item xs={12} key={idx}>
           {(item.id.videoId || item.id.playlistId) && (
             <VideoCard video={item} />
           )}
@@ -27,4 +21,4 @@ const Videos = ({ videos, direction }) => {
   );
 };
 
-export default Videos;
+export default SideVideos;

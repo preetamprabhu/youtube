@@ -26,34 +26,31 @@
 //     }
 // }
 
+import axios from "axios";
 
-
-
-import axios from 'axios';
-
-const BASE_URL = 'https://youtube-v31.p.rapidapi.com';
-const RAPID_API_KEY = '81568f89ddmsh2d090323c33d7c7p1c99adjsn3d21c5700074'
+const BASE_URL = "https://youtube-v31.p.rapidapi.com";
+const RAPID_API_KEY = "81568f89ddmsh2d090323c33d7c7p1c99adjsn3d21c5700074";
 // '311fc3f797mshbe404c6c89a47d7p117129jsnf90679ffb0c1';
 
 const axiosInstance = axios.create({
-    baseURL: BASE_URL,
-    headers: {
-        'X-RapidAPI-Key': RAPID_API_KEY,
-        'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
-        'Content-Type': 'application/json',
-    },
-    params: {
-        maxResults: 50
-    }
+  baseURL: BASE_URL,
+  headers: {
+    "X-RapidAPI-Key": RAPID_API_KEY,
+    "X-RapidAPI-Host": "youtube-v31.p.rapidapi.com",
+    "Content-Type": "application/json",
+  },
+  params: {
+    maxResults: 50,
+  },
 });
 
 const FetchFromAPI = async (url) => {
-    try {
-        const response = await axiosInstance.get(url);
-        return response.data;
-    } catch (error) {
-        console.error(error);
-        // throw error;
-    }
+  try {
+    const response = await axiosInstance.get(url);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    // throw error;
+  }
 };
-export default FetchFromAPI
+export default FetchFromAPI;

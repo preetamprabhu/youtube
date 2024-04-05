@@ -7,7 +7,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Box sx={{ backgroundColor: "black "}}>
+    <div className="App">
+
+      <Box sx={{ backgroundColor: "black "}} minWidth='80vw'>
         <Navbar />
         <Routes>
           <Route path='/' element={<Feed />} />
@@ -16,6 +18,7 @@ function App() {
           <Route path='/search/:searchTerm' element={<SearchFeed />} />
         </Routes>
       </Box>
+    </div>
     </BrowserRouter>
   )
 }
