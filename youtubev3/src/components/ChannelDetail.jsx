@@ -8,6 +8,7 @@ import { Box } from "@mui/material";
 import Videos from "./Videos";
 import ChannelCard from "./ChannelCard";
 import FetchFromAPI from "../utils/FetchFromAPI";
+import { Margin } from "@mui/icons-material";
 
 function ChannelDetail() {
   const [channelDetail, setChannelDetail] = useState();
@@ -33,17 +34,17 @@ function ChannelDetail() {
       <Box
         style={{
           height: "300px",
-          backgroundColor:
-            '#A16BFE',
-          zIndex: 10,
+          backgroundColor: "#AE67FA",
         }}
       >
-        <ChannelCard channelDetail={channelDetail} marginTop="-93px" />
       </Box>
+      <ChannelCard channelDetail={channelDetail} />
 
-      <Box p={2} display="flex">
-        <Box sx={{ mr: { sm: "100px" } }} />
-        <Videos videos={videos} />
+
+      <Box >
+        <Box sx={{ p: { xs: "30px" } }} >
+          <Videos videos={videos} />
+        </Box>
       </Box>
     </Box>
   );
