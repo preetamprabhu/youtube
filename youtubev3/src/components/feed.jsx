@@ -26,7 +26,7 @@ function Feed() {
   }, [selectedCategory]);
 
   return (
-    <>
+    
       <Stack
         sx={{
           position: "relative",
@@ -42,8 +42,8 @@ function Feed() {
             height: { xs: "0vh", md: "92vh" },
             borderRight: "1px solid #3d3d3d",
             px: { xs: 0, md: 0 },
-            position: "sticky",
-            top: "12vh",
+            position: {xs:'static',md:"sticky"},
+            top: {xs:'0',sm :"12vh"},
             left: "0",
           }}
         >
@@ -62,6 +62,7 @@ function Feed() {
         <Stack
           className='feedvideos'
           p="13px"
+          
           sx={{
             flexDirection: 'column',
             overflowY: "auto",
@@ -72,7 +73,7 @@ function Feed() {
           <Typography
             fontWeight="bold"
             variant="h4"
-            sx={{ m: 1.5, color: "#FC1503" }}
+            sx={{ mt: {xs:10,sm:1}, color: "#FC1503" }}
           >
             {selectedCategory}{" "}
             <span variant="h4" style={{ color: "#FC1503" }}>
@@ -82,7 +83,6 @@ function Feed() {
           <Videos videos={videos}  />
         </Stack>
       </Stack>
-    </>
   );
 }
 
